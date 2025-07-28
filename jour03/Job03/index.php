@@ -10,7 +10,6 @@ while (isset($str[$longueur])) {
 }
 
 for ($i = 0; $i < $longueur; $i++) {
-    $estVoyelle = false;
 
     foreach ($voyelles as $voyelle) {
         if ($str[$i] === $voyelle) {
