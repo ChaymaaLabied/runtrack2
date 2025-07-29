@@ -26,13 +26,23 @@
     <hr>
 
     <?php
-    if (!empty($_GET)) {
-        $nombreArguments = count($_GET);
-        echo "<p>Le nombre d'arguments GET envoyés est : <strong>$nombreArguments</strong></p>";
-        echo "<ul>";
+
+    if (isset($_GET['nom']) || isset($_GET['age']) || isset($_GET['ville'])) {
+
+        $compteur = 0;
+
         foreach ($_GET as $cle => $valeur) {
-            echo "<li><strong>$cle</strong> : $valeur</li>";
+
+            $compteur += 1;
         }
+
+        echo "<p>Le nombre d'arguments GET envoyés est : <strong>" . $compteur . "</strong></p>";
+        echo "<ul>";
+
+        foreach ($_GET as $cle => $valeur) {
+            echo "<li><strong>" . $cle . "</strong> : " . $valeur . "</li>";
+        }
+
         echo "</ul>";
     }
     ?>
