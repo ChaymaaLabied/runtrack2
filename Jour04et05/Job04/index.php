@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire GET simple sans fonctions</title>
+    <title>Formulaire POST simple sans fonctions</title>
 </head>
 
 <body>
 
-    <h1>Formulaire GET simple</h1>
+    <h1>Formulaire POST simple</h1>
 
-    <form action="" method="get">
+    <form action="" method="post">
         <label for="prenom">Prénom :</label>
         <input type="text" name="prenom" id="prenom"><br><br>
 
@@ -26,14 +26,12 @@
     <hr>
 
     <?php
-
-    if (isset($_GET['prenom']) || isset($_GET['nom']) || isset($_GET['email'])) {
+    if (isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['email'])) {
         echo "<h2>Données reçues :</h2>";
         echo "<table border='1' style='border-collapse: collapse; margin-top: 20px;'>";
         echo "<tr><th>Argument</th><th>Valeur</th></tr>";
 
-
-        foreach ($_GET as $cle => $valeur) {
+        foreach ($_POST as $cle => $valeur) {
             echo "<tr><td>" . $cle . "</td><td>" . $valeur . "</td></tr>";
         }
 
