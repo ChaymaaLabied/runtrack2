@@ -1,0 +1,11 @@
+body {
+  background-color: #f5fff0;
+  font-family: "Georgia", serif;
+  color: #006600;
+}
+form {
+  border: 4px double #006600;
+  padding: 10px;
+  background-color: #d8f7c8;
+  border-radius: 12px;
+}
