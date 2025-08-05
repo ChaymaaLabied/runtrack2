@@ -5,7 +5,10 @@ if ($mysqli->connect_error) {
     die('Erreur de connexion : ' . $mysqli->connect_error);
 }
 
-$sql = "SELECT AVG(capacite) AS capacite_moyenne FROM salles";
+$sql = "SELECT prenom, nom, naissance 
+        FROM etudiants 
+        WHERE naissance BETWEEN '1998-01-01' AND '2018-12-31'";
+
 $result = $mysqli->query($sql);
 
 if ($result && $result->num_rows > 0) {
